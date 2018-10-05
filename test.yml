@@ -4,6 +4,8 @@
 - hosts: all
   become: true
   vars:
+    bind_zone_dir: /var/local/named-zones
+    bind_zone_file_mode: '0660'
     bind_allow_query:
       - any
     bind_listen_ipv4:
@@ -18,6 +20,7 @@
       - '8.8.8.8'
       - '8.8.4.4'
     bind_recursion: true
+    bind_query_log: 'data/query.log'
     bind_check_names: 'master ignore'
     bind_zone_master_server_ip: 172.17.0.2
     bind_zone_minimum_ttl: "2D"
