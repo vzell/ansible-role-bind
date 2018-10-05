@@ -90,7 +90,7 @@ configure_environment() {
         run_opts+=('--volume=/sys/fs/selinux:/sys/fs/selinux:ro')
       fi
       ;;
-    ubuntu_1[68].04|debian_*)
+    ubuntu_1[68].04|debian_*|arch_latest)
       run_opts=('--volume=/run' '--volume=/run/lock' '--volume=/tmp' '--volume=/sys/fs/cgroup:/sys/fs/cgroup:ro' '--cap-add=SYS_ADMIN' '--cap-add=SYS_RESOURCE')
 
       if [ -x '/usr/sbin/getenforce' ]; then
